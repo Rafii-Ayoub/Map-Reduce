@@ -1,6 +1,6 @@
 # Map Reduce
 
-![](https://forthebadge.com/images/badges/made-with-java.svg) ![](https://forthebadge.com/images/badges/built-with-love.svg)
+![](https://forthebadge.com/images/badges/made-with-java.svg) 
 
 
 The goal of this project is to reproduce the behavior of Hadoop on the example of
@@ -8,10 +8,9 @@ word count seen in class labs. So I must design a distributed word counting plat
 based on map-reduce (to be programmed with Sockets or RMI ).This project must not use the platform of
 Hadoop, 
 
--**As input: ** a set of text files containing words; 
--**As output:** a dictionary comprising all the words associated with the counter
-of their number of occurrences.
-
+-As input:  a set of text files containing words; 
+-As output: a dictionary comprising all the words associated with the counter of their number of occurrences.
+  
 In a first phase, a stain by
 file will count the number of occurrences of the words in the file it
 received (MAP), secondly a fixed number of spots
