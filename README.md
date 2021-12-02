@@ -26,9 +26,9 @@ working in parallel.
  
 # Table of content: 
 
-[1. Modeling the problem]( #Modeling the problem)
+[1. Modeling the problem]( #Modeling-the-problem)
 [2. Installation]( #Installation)
-[3. Steps of coding]( #Steps of coding)
+[3. Steps of coding]( #Steps-of-coding)
 
 ## Modeling the problem
 
@@ -37,6 +37,9 @@ working in parallel.
 
 #### This diagram represents how I designed my program
 ![](images/MapReduce.png)
+
+I created a java class VM which is the mapper in my program. Each VM object is attributed to a port form 3000 to 3000+k.
+The reducer in my program is the MachineReducer class. It's responsible to do reducing.
 
 ## Installation 
 
