@@ -26,9 +26,9 @@ working in parallel.
  
 # Table of content: 
 
-1.[ Modeling the problem]( #Modeling-the-problem)
-2.[ Installation]( #Installation)
-3.[ Steps of coding]( #Steps-of-coding)
+- [ Modeling the problem]( #Modeling-the-problem)
+- [ Installation]( #Installation)
+- [ Steps of coding]( #Steps-of-coding)
 
 ## Modeling the problem
 
@@ -45,10 +45,12 @@ At the crux of MapReduce are two functions: Map and Reduce. They are sequenced o
 - The Reduce function also takes inputs as <key,value> pairs, and produces <key,value> pairs as output.
 
 The types of keys and values differ based on the use case. All inputs and outputs are stored in the HDFS. While the map is a mandatory step to filter and sort the initial data, the reduce function is optional.
-'''
-<k1, v1> -> Map() -> list(<k2, v2>)
-<k2, list(v2)> -> Reduce() -> list(<k3, v3>)
-'''
+
+```
+- <k1, v1> -> Map() -> list(<k2, v2>)
+- <k2, list(v2)> -> Reduce() -> list(<k3, v3>)
+```
+
 Mappers and Reducers are the Hadoop servers that run the Map and Reduce functions respectively. It doesn’t matter if these are the same or different servers.
 ![](images/mapreduce-.png)
 
