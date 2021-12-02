@@ -26,20 +26,39 @@ working in parallel.
  
 # Table of content: 
 
-[1. Modeling the problem]( #Modeling-the-problem)
-[2. Installation]( #Installation)
-[3. Steps of coding]( #Steps-of-coding)
+1.[ Modeling the problem]( #Modeling-the-problem)
+2.[ Installation]( #Installation)
+3.[ Steps of coding]( #Steps-of-coding)
 
 ## Modeling the problem
 
-#### This diagram discribes how a mapreduce program works 
+#### The MapReduce process 
+
+MapReduce is a programming model or pattern within the Hadoop framework that is used to access big data stored in the Hadoop File System (HDFS). It is a core component, integral to the functioning of the Hadoop framework.
+
+MapReduce facilitates concurrent processing by splitting petabytes of data into smaller chunks, and processing them in parallel on Hadoop commodity servers. In the end, it aggregates all the data from multiple servers to return a consolidated output back to the application.
+
+
+At the crux of MapReduce are two functions: Map and Reduce. They are sequenced one after the other.
+
+- The Map function takes input from the disk as <key,value> pairs, processes them, and produces another set of intermediate <key,value> pairs as output.
+- The Reduce function also takes inputs as <key,value> pairs, and produces <key,value> pairs as output.
+
+The types of keys and values differ based on the use case. All inputs and outputs are stored in the HDFS. While the map is a mandatory step to filter and sort the initial data, the reduce function is optional.
+'''
+<k1, v1> -> Map() -> list(<k2, v2>)
+<k2, list(v2)> -> Reduce() -> list(<k3, v3>)
+'''
+Mappers and Reducers are the Hadoop servers that run the Map and Reduce functions respectively. It doesn’t matter if these are the same or different servers.
 ![](images/mapreduce-.png)
 
-#### This diagram represents how I designed my program
+#### How I designed my program
+
+I created a Java class VM which is the mapper for my program. Each VM object is assigned to a port from 3000 to 3000 + k.
+The reducer for my program is the MachineReducer class. He is responsible for making the reducing. The VMHandler is responsible for handling and managing the VM objects by giving each one the task of reading a subfile and doing the reducting. I have also created other classes to scrape web pages and parse html texts and extract text which will be splited into sub-texts.
+
 ![](images/MapReduce.png)
 
-I created a java class VM which is the mapper in my program. Each VM object is attributed to a port form 3000 to 3000+k.
-The reducer in my program is the MachineReducer class. It's responsible to do reducing.
 
 ## Installation 
 
